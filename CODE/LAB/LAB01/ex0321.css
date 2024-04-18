@@ -1,0 +1,57 @@
+*{
+    margin:0 auto;
+}
+h1 + p {color:aqua;}
+h1 ~ p {font-weight:bold;}
+h1{
+    text-shadow: 2px 2px 2px #36c63d
+    text-decoration:underline;
+}
+#signup label{
+    float: left;
+    font-size: 15px;
+    width:120px;
+    
+}
+
+fieldset{
+    border: 1px solid #c63636
+}
+
+
+legend{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#signup input{
+    border: 1px solidrgb(217, 219, 92)
+}
+
+li{
+    list-style-type: none;
+    
+}
+
+#signup input[type="submit"]{
+    background-color: blueviolet;
+    color:aliceblue;
+    width: 100px;
+    height:30px;
+
+    border-radius: 10px;
+    
+}
+
+#signup input[type = "submit"]hover{
+    background-color:aquamarine
+}
+
+fieldset:last-of-type{
+    border: none;
+}
+
+
+#name, #email, #tel{
+    
+}
