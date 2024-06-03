@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateGrade() {
+            var num = prompt("점수를 입력하세요"); // 점수
+            var grade = ""; // 문자열로 초기화
+
+            // 입력된 값이 문자열이므로 숫자로 변환하여 비교
+            num = parseInt(num);
+
+            if (num >= 90){
+                grade = 'A';
+            }
+            else if (num >= 80){
+                grade = 'B';
+            }
+            else if (num >= 70){
+                grade = 'C';
+            }
+            else if (num >= 60){
+                grade = 'D';
+            }
+            else {
+                grade = 'F';
+            }
+
+            document.write("<h1>입력한 점수 " + num + "는 " + grade + "학점입니다.</h1>");
+        }
+
+        // 함수 호출
+        calculateGrade();
+    </script>
+</body>
+</html>
+

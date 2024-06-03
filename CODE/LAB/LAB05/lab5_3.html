@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bmi() {
+            var name = prompt("이름을 입력하시오");
+            var age = prompt("나이를 입력하시오(숫자)");
+            var cm = prompt("키를 입력하시오(숫자)");
+            var kg = prompt("체중을 입력하시오(숫자)");
+            var bmi = kg / (cm / 100) ** 2;
+            var result = "";
+
+            if (20 <= age && age <= 30) {
+                if (bmi <= 17.9) {
+                    result = "저체중";
+                } else if (bmi >= 18 && bmi <= 23) {
+                    result = "표준체중";
+                } else if (bmi >= 24 && bmi <= 30) {
+                    result = "과체중";
+                } else {
+                    result = "비만";
+                }
+            } else if (30 <= age && age <= 40) {
+                if (bmi <= 18.4) {
+                    result = "저체중";
+                } else if (bmi >= 18.5 && bmi <= 24) {
+                    result = "표준체중";
+                } else if (bmi >= 25 && bmi <= 30) {
+                    result = "과체중";
+                } else {
+                    result = "비만";
+                }
+            } else {
+                result = "해당 연령대의 BMI 계산범위가 없습니다.";
+            }
+            //bmi계산해서 출력
+            document.write("<h2>이름: " + name + "<br>나이: " + age + "<br>키: " + cm + "<br>체중: " + kg + "<br>당신의 " + result + "(" + bmi + ")입니다.</h2>");
+        }
+        // 함수 호출
+        bmi();
+    </script>
+</body>
+</html>
