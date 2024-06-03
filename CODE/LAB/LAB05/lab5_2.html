@@ -7,9 +7,9 @@
 </head>
 <body>
     <script>
-        function messages() {
-            let msg = prompt("반복할 메세지를 입력하세요."); // 사용자로부터 msg 입력 받기
-            let count = prompt("몇 번 반복할까요?"); // 사용자로부터 count 입력 받기
+        let messages = function() {
+            let msg = prompt("반복할 메세지를 입력하세요."); //msg 입력 받기
+            let count = prompt("몇 번 반복할까요?"); //count 입력 받기
             
             // 입력된 count가 숫자인지 확인
             if (isNaN(count)) {

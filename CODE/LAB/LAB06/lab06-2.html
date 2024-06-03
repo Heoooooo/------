@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 생성기</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #8158e0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #6b47ad;
+        }
+        #block {
+            background-color: #c4e3f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+        #numbers {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "block">
+        <h1>로또 번호 생성기</h1>
+        <button type = "button" onclick="generateLottoNumbers()">로또 번호 생성하기</button>
+        <div id = "numbers"></div>
+        <button class="close-btn" onclick="window.close()">닫기</button>
+    </div>
+    
+</body>
+<script>
+    function generateLottoNumbers() {
+        var numbers = [];
+        var randomNumber;
+
+        // 중복되지 않는 로또 번호 6개 생성
+        while (numbers.length < 6) {
+            randomNumber = Math.floor(Math.random() * 45) + 1; // 1부터 45 사이의 난수 생성
+            if (!numbers.includes(randomNumber)) {
+                numbers.push(randomNumber);
+            }
+        }
+
+        // 생성된 로또 번호를 화면에 표시
+        var resultDiv = document.getElementById("numbers");
+
+        // 번호를 쉼표로 나눠서 출력
+        resultDiv.innerHTML = numbers.join(", ");
+    }
+        
+</script>
+</html>

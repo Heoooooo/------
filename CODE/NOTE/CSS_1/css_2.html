@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            header h1{font-size : 50px;}
+            div{
+                width : 600px;
+                height : 200px;
+            }
+            .spring{
+                line-height : 30px;
+            }
+            .summer{
+                letter-spacing: 20px;
+                word-spacing: 20px;
+            }
+            .autumn{
+                text-shadow:10px 10px  4px black ;
+            }
+            .winter{
+                text-decoration: line-through;/*under-line, over-lign, line-through, none이 있다. 다해봄 아래 위 중간*/
+                text-align:right;/* left, right, center, justify(양쪽 맞춤)*/
+            }
+                
+        </style>
+    </head>
+    <body>
+        <!--css스타일을 입히면 나중에 입힌게 우위에 있다.-->
+        <header><h1>계절</h1></header>
+        <h1 class = "season">봄</h1>
+        <div class = "spring">이걸로는 줄 간격을 한 번 봐바야지<br>
+        그러려면 여러줄이 있어야 구분가능하지~</div><!--0.7로 두면 따닥따닥 붙음-->
+        <h1 class = "season">여름</h1>
+        <div class = "summer">여기서는 단어 간격이랑 문자 간격 봐바야지<br>
+        위에거랑 비교하기~</div>
+        <h1 class = "season">가을</h1>
+        <div class = "autumn">여기서는 그림자 효과를 해봐야지</div><!--가로거리, 세로거리, 흐림정도, 색깔-->
+        <h1 class = "season">겨울</h1>
+        <div class = "winter">여기서는 텍스트에 줄 표시하고 정렬도 해야지</div><!--div태그는 600px이기 때문에 화면상 완전한 정렬처럼 안보일 수 있지만 그것들을 묶는 div태그를 새로베 만들어서 그것을 정렬하면 해결된다.-->
+    </body>
+</html>

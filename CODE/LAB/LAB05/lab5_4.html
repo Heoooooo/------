@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Countdown</title>
+    <style>
+         #demo {
+            color: blue;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
+    <div id="demo"></div>
+
     <script>
-        
+        function startCountdown(seconds, callback) {
+            const timer  = setInterval(function() {
+                document.getElementById("demo").innerText = seconds; // 초를 화면에 표시
+                seconds--;
+
+                if (seconds < 0) {
+                    clearInterval(timer); // 타이머 정지
+                    callback(); // 카운트 다운이 끝나면 콜백 함수 호출
+                }
+            }, 1000); // 1초마다 실행을 하니까 1000
+        }
+
+        function finish() {
+            document.getElementById("demo").innerText = "타이머 종료";
+        }
+
+        // 사용자로부터 숫자 입력 받기
+        let seconds = parseInt(prompt("카운트다운할 숫자를 입력하세요."));
+
+        if (isNaN(seconds) || seconds < 0) {
+            document.getElementById("demo").innerText = "올바른 숫자를 입력해주세요.";
+        } else {
+            // startCountdown 함수 호출
+            startCountdown(seconds, finish);
+        }
     </script>
 </body>
 </html>

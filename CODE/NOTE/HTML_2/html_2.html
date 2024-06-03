@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html_2:입력양식</title>
+</head>
+<body>
+    <h1>HTML 입력양식</h1>
+    <p>사용자에게 정보를 입력받는 요소</p>
+
+    <hr>
+    <h1>form</h1>
+    <p>사용자가 입력한 데이터를 수집하기 위해 사용하며 웹 서버로 정보를 보낼 수 있는 요소들은 모두 폼,<br>
+         폼과 관련된 작업들은 정보 저장 목정, 정보 검색, 정보 수정 등으로 데이터베이스 기반이며<br>
+         입력된 정보처리를 위해 스크립트 언어 또는 서버 프로그래밍을 사용한다.</p>
+    <h2>HTML Forms</h2>
+
+    <form action = "html_2_1.txt">
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for = "fname">First name:</label><!--여기서 fname이 id명-->
+            <input type = "text" id = "fname" name = "fname"><br>
+            <label for = "lname">Last name:</label>
+            <input type = "text" id = "lname" name = "lname" value = "Doe"><br><br>
+    
+            <input type = "submit" value = "Submit">
+        </fieldset>
+    </form>
+    <p>만약 내가 Submit버튼을 누르면 폼의 데이터가 어떠한 페이지에 보내질것이다. action안에 있는 페이지</p>
+    <dl>
+        <dt>HTML Form Elements</dt>
+        <dd>lavel : 각 입력 양식 요소를 위함</dt>
+        <dd>textarea : 텍스트 영역</dt>
+        <dd>input : 기본 입력 양식 요소</dt>
+        <dd>fieldset : 폼 요소를 그룹으로 묶는 태그</dt><!--fieldset이랑 legend는 세트인가보구나-->
+        <dd>legend : 그룹으로 묶는 구역에 제목을 붙이는 태그</dt>
+        <dd>datalist : 데이터 목록에 제시한 값 중 선택하면 텍스트 필드에 입력</dt>
+        <dd>select : 드롭다운 목록(=콤보박스), option, optgroup</dt>
+        <dd>button : 다양한 형태의 버튼 삽입</dt>
+        <dd>output : 계산 결과</dt>
+    </dl>
+    <h3>label -> 시맨틱 태그</h3>
+    <p>input태그 안에 있는 id는 연결자처럼 작용되고, name은 서버에 전달될때 (key값같은)구분자 이름이다.</p>
+    <h3>textarea</h3>
+    <p>여러 줄 입력 rows속성 : 문자단위, cols : 줄 단위</p>
+    <textarea name = "message" rows = "10" cols = "30">
+        <quot>The cat was playing in the garden.</quot>는 인용문이고 가로로는 30칸 세로로는 10줄에 해당한다.
+    </textarea>
+
+    <hr>
+    <h1>datalist, select, option</h1>
+    <input list = "browers">
+    <datalist id = "browers"><!--데이터 목록에서 값을 선택하면 자동으로 텍스트 필드에 값이 입력-->
+        <option value = "Edge">
+        <option value = "Firefox">
+    </datalist>
+    <br>
+
+    <label for="cars">Choose a car :</label>
+    <select id = "cars" name = "cars"><!--드롭다운 목록-->
+        <option value = "volvo">Volvo</option><!--optgroup으로 option태그들을 묶을 수 있음-->
+        <option value = "saab">Saab</option>
+    </select>
+
+    <hr>
+    <h1 style = "color : red;">button, output 다시보기</h1>
+    <button type = "button" onclick = "alert('hello world!')">Click me!</button>
+
+    <form action = "/action_page.php" oninput = "x.value = parseInt(a.value) + parseInt(b.value)">0
+    <input type = "range" id = "a" name = "a" value = "50"> 100 +
+    <output name = "x" for = "a b"></output>
+    <br><br>
+    <input type = "submit"></form>
+
+    <hr>
+    <h1>input태그의 다양한 속성</h1>
+    <dl>
+        <dt>뭐가 있을까나</dt>
+        <dd>value : 디폴트 값</dd>
+        <dd>disabled : 클릭 안되게 설정, 사용 안됨, 폼 요소로 제출 안됨</dd>
+        <dd>readonly : 내용을 보기만 하고 입력하지 못하게 함</dd>
+        <dd>required : 필수 필드 체크, 필수 필드는 브라우저에서 직접 체크하는 것으로 오류 메시지 내용은 브라우저마다 다르게 나타남</dd>
+        <dd>size : 보여지는 너비 설정(문자수), 넘겨도 되지만 보이지 않음</dd>
+        <dd>min, max : 타입에 최소, 최대 값 설정(number, range, date, month, time, week)</dd>
+        <dd>multiple : 다중선택허용(file, select)</dd>
+        <dd>placeholder : 입력란에 표시하는 힌트로, 필드를 클릭하면 사라짐</dd>
+        <dd>pattern : 입력 값 체크</dd>
+        <dd>autofocus : 페이지를 불러오자마자 원하는 폼 요소에 마우스 커서 표시</dd>
+        <dd>autocomplete : 입력 요소에 들어갈 값을 예측해서 보여줌</dd>
+    </dl>
+
+</body>
+</html>

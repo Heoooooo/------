@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Test</title>
+    <style>
+        *{
+            margin: 0 auto;
+            line-height: 3em;
+        }
+        body{
+            width: 300px;
+        }
+        select{
+            height: 30px;
+            font-size: 1.2em;
+        }
+        div{
+            width: 200px; height: 200px;
+            background-color: rgb(31, 192, 232);
+            color: white;
+            line-height:200px;
+            text-align:center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>DOM 실습</h1>
+        <label>텍스트 내용 입력 <input type="text" id="t"></label><br>
+        <label>배경색 <input type="color" id="bgcolor" value="#0000ff"></label><br>
+        <label>글자색 <input type="color" id="fcolor" value="#ffffff"></label><br>
+        <label>글자크기 <select id="fsize">
+            <option value="10px">10</option>
+            <option value="15px">15</option>
+            <option value="20px">20</option>
+            <option value="25px">25</option>
+            <option value="30px">30</option>
+            </select>
+        </label><br> 
+        <label><input type="radio" name="shape" value="circle" class="shape">원</label> &nbsp;&nbsp;
+        <label><input type="radio" name="shape" value="square" class="shape" checked>사각형</label>&nbsp;&nbsp;
+        <label><input type="radio" name="shape" value="round" class="shape">모서리가 둥근 사각형</label>
+        <div id="rs">텍스트 내용</div>
+    </form>
+    <script>
+        document.getElementById('t').addEventListener('blur', function() {
+            var text = this.value;
+            document.getElementById('rs').textContent = text;
+        });
+
+        document.getElementById('bgcolor').addEventListener('change', function() {
+            var bgcolor = this.value;
+            document.getElementById('rs').style.backgroundColor = bgcolor;
+        });
+
+        document.getElementById('fcolor').addEventListener('change', function() {
+            var fcolor = this.value;
+            document.getElementById('rs').style.color = fcolor;
+        });
+
+        document.getElementById('fsize').addEventListener('change', function() {
+            var fsize = this.options[this.selectedIndex].value;
+            document.getElementById('rs').style.fontSize = fsize;
+        });
+
+        var radiosel = document.querySelectorAll('input[type=radio][name=shape]');
+        radiosel.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                var shape = this.value;
+                var rs = document.getElementById('rs');
+                if (shape === 'circle') {
+                    rs.style.borderRadius = '50%';
+                } else if (shape === 'square') {
+                    rs.style.borderRadius = '0';
+                } else if (shape === 'round') {
+                    rs.style.borderRadius = '15px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

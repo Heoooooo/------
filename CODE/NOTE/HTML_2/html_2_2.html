@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML입력양식_2</title>
+</head>
+<body>
+    <form>
+        <label for = "username">Username : </label>
+        <input type = "text" id = "username" name = "username"><br>
+        <label for = "email">Enter your email : </label>
+        <input type = "text" id = "email" name = "email"><br>
+        <label for = "pwd">Password : </label>
+        <input type = "password" id = "pwd" name = "pwd"><br>
+        <input type = "hidden" id = "custId" name = "custId" value = "3487">
+        <input type = "submit" value = "Submit">
+        <input type = "reset" value = "Reset">
+
+    </form>
+
+    <hr>
+    <form>
+        <h3>라디오 버튼 예제</h3>
+        <input type="radio" id="html" name="fav_language" value="HTML"><!--라디오 박스를 클릭하면 value값인 HTML이 key값인 fav_language로 서버에 전달-->
+        <label for="html">HTML</label><br><!--여기서 HtML값을 지우면 출력되지가 않는다.-->
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+        <!--여기서 주목해야할점! 선택될때 전달될 값이 라디오버튼은 한개이고 체크박스는 여러개 이므로 name값이 체크박스는 다 다르게 주어진다.-->
+        <h3>체크박스 예제</h3>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+    </form>
+    
+    <h3>date time 입력 예제</h3>
+    <form>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday"><br/>
+        <label for="datemax">Enter a date before 1980-01-01:</label><!--날짜 범위 제한 가능-->
+        <input type="date" id="datemax" name="datemax" max="1979-12-31"><br/>
+        <label for="datemin">Enter a date after 2000-01-01:</label>
+        <input type="date" id="datemin" name="datemin" min="2000-01-02"><br/>
+        <label for="birthdaytime">Birthday (date and time):</label>
+        <input type="datetime-local" id="birthdaytime" name="birthdaytime"><br/>
+        <label for="bdaymonth">Birthday (month and year):</label>
+        <input type="month" id="bdaymonth" name="bdaymonth"><br/>
+        <label for="week">Select a week:</label>
+        <input type="week" id="week" name="week"><br/>
+    </form>
+
+    <h3>기타 다양한 입력타입 예제</h3>
+    <form>
+        <input type="button" onclick="alert('Hello World!')" value="Click Me!"><br/>
+        <input type="image" src="bear.jpg" alt="Submit" width="48" height="48"><br/>
+        <label for="favcolor">Select your favorite color:</label>
+        <input type="color" id="favcolor" name="favcolor"><br/>
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br/>
+        <label for="quantity">Quantity (between 1 and 5):</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="5"><br/>
+        <label for="vol">Volume (between 0 and 50):</label>
+        <input type="range" id="vol" name="vol" min="0" max="50"><br/>
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br/>
+        <label for="gsearch">Search Google:</label>
+        <input type="search" id="gsearch" name="gsearch"><br/>
+        <label for="appt">Select a time:</label>
+        <input type="time" id="appt" name="appt"><br/>
+        <label for="homepage">Add your homepage:</label>
+        <input type="url" id="homepage" name="homepage"><br/>
+</form>
+
+
+</body>
+</html>

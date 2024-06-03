@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <div id = "demo"></div>
+    <script>
+        const cars = ["Saab", "Volvo", "BMW"];//배열 생성
+        let car = cars[0]//요소 접근
+        document.write(car+"<Br>");
+        let size = cars.length;
+        document.write(size+"<Br>");
+        cars.sort();
+        document.write(cars+"<Br>");
+        cars.reverse();
+        document.write(cars+"<Br>");
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let text = "<ol>";
+        fruits.forEach(myFunction);
+        text += "<ol>";
+        function myFunction(value){
+            text += "<li>" + value + "</li>"
+        }
+        document.write(text);
+        //toString():문자열 반환
+        document.getElementById("demo").innerHTML = fruits.toString();//문자열 반환
+        //at()
+        let fruit = fruits.at(2);//fruits[2]와 동일
+        document.write(fruit+"<br>");
+        //join() : 구분자와 함께 연결된 문자열 반환
+        //document.getElementById("demo").innerHTML = fruits.join(" * ")//위에 있던 문자열 반환위에 덮인듯
+
+        //pop(),push() : 마지막 요소 제거 및 추가 -const로 선언했어도 그안에 있는 요소들은 바꿀 수 있다.
+        let fruit_1 = fruits.pop();
+        fruits.push("Kiwi");
+        
+        document.write(fruit_1 + "<br>" + fruits);
+        //shift(),unshitf() : 첫번째 요소 제거 및 추가
+    </script>
+</body>
+</html>

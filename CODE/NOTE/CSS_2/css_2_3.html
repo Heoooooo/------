@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소를 중앙에 배치</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #f0f0f0;
+        }
+        #container{
+            width : 400px; height : 200px;
+            border : 2px solid black;
+            background-color: yellow;
+            position:absolute;
+            left : 50%;
+            top : 50%;
+            margin-left:-200px;/*요소의 너비와 길이가 400과 200인데 50%했을때 모서리가 중간으로 오니까 이렇게 음수를 넣어줘야 한다*/
+            margin-top:-100px;
+            text-align : center;
+            line-height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <h1>요소의 중앙 배치</h1>
+    </div>
+</body>
+</html>

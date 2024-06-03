@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA2 함수</title>
+</head>
+<body>
+    <script>
+        //디폴트 매개변수
+        function myFunction(x,y){
+            if(y === undefined){
+                y = 2;
+            }
+        }
+        
+        function multiple(a, b = 5, c = 10){//b는 5, c는 10으로 기본값 지정
+            return a * b + c;
+        }
+        var result1 = multiple(5,10,20);
+        var result2 = multiple(10,20);
+        var result3 = multiple(30);
+
+        document.write(result1+"<br>");
+        document.write(result2+"<br>");
+        document.write(result3+"<br>");
+        
+
+        //가변길이 매개 변수
+        function sum(...args){
+            let sum = 0;
+            for (let arg of args){
+                sum+=arg;
+            }            
+            return sum;
+        }
+
+        let x = sum(4,5,6,7);
+        document.write(x);
+
+        //익명 함수
+        const a = function(a,b){return a*b};
+        let z = a(4,5);
+
+        document.write("<br>" + z);
+
+        //즉시 실행 함수
+        (function(c, d){
+          let s = c + d;
+          document.write("<br>"+s);
+        }(100,200));
+
+        //화살표 함수
+        const e = (f,g)=>{return f*g};//한줄이기 때문에 return도 생략 가능
+        document.write("<br>"+e(3,4));
+        //뒤에 콜백함수랑 비동기 함수 이어서 js_2_2
+    </script>
+</body>
+</html>
