@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Movie</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="header">
+        <h1>HOME</h1>
+    </header>
+    <nav class="nav-menu">
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="genre">GENRE</a>
+            <div class="submenu" id="genre-submenu">
+                <a href="action2021.html">ACTION</a>
+                <a href="romance2021.html">ROMANCE</a>
+                <a href="comedy2021.html">COMEDY</a>
+                <a href="sf2021.html">SF</a>
+            </div>
+        </div>
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="top3">Top 3</a>
+            <div class="submenu" id="top3-submenu">
+                <a href="furious.html">분노의 질주</a>
+                <a href="crimecity.html">범죄도시</a>
+                <a href="babadriver.html">Baba Driver</a>
+            </div>
+        </div>
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="mytheater">MY THEATER</a>
+            <div class="submenu" id="mytheater-submenu">
+                <a href="cgv.html">CGV</a>
+                <a href="megabox.html">MEGA BOX</a>
+                <a href="lottecinema.html">LOTTE CINEMA</a>
+            </div>
+        </div>
+    </nav>
+    <div class="body-content">
+        <div class="movie-item">
+            <img src="img/movie1.jpg" alt="Movie 1">
+            <div class="movie-description">
+                <h3>Movie 1 Description</h3>
+                <p>이미지 1에 대한 설명을 여기에 작성하세요.</p>
+            </div>
+        </div>
+        <div class="movie-item">
+            <img src="img/movie2.jpg" alt="Movie 2">
+            <div class="movie-description">
+                <h3>Movie 2 Description</h3>
+                <p>이미지 2에 대한 설명을 여기에 작성하세요.</p>
+            </div>
+        </div>
+        <div class="movie-item">
+            <img src="img/movie3.jpg" alt="Movie 3">
+            <div class="movie-description">
+                <h3>Movie 3 Description</h3>
+                <p>이미지 3에 대한 설명을 여기에 작성하세요.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Copyright 유하연 주소 서울특별시 용산구 청파로47길 100</p>
+    </footer>
+    <script>
+        document.getElementById('genre').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleSubmenu('genre-submenu');
+        });
+
+        document.getElementById('top3').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleSubmenu('top3-submenu');
+        });
+
+        document.getElementById('mytheater').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleSubmenu('mytheater-submenu');
+        });
+
+        function toggleSubmenu(submenuId) {
+            var submenus = document.querySelectorAll('.submenu');
+            submenus.forEach(function(submenu) {
+                if (submenu.id === submenuId) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    submenu.style.display = 'none';
+                }
+            });
+        }
+
+        // Hide the submenus when clicking outside of them
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.menu-item')) {
+                var submenus = document.querySelectorAll('.submenu');
+                submenus.forEach(function(submenu) {
+                    submenu.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
