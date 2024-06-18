@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .body-content a{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>현재 위치에서 영화관 찾기</h1>
+    </header>
+    <nav class="nav-menu">
+        <div class="menu-item" style="position: relative;">
+            <a href="home.html">HOME</a>
+        </div>
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="genre">GENRE</a>
+            <div class="submenu" id="genre-submenu">
+                <a href="action2021.html">ACTION</a>
+                <a href="romance2021.html">ROMANCE</a>
+                <a href="comedy2021.html">COMEDY</a>
+                <a href="sf2021.html">SF</a>
+            </div>
+        </div>
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="top3">Top 3</a>
+            <div class="submenu" id="top3-submenu">
+                <a href="furious.html">분노의 질주</a>
+                <a href="crimecity.html">범죄도시</a>
+                <a href="babadriver.html">Baba Driver</a>
+            </div>
+        </div>
+        <div class="menu-item" style="position: relative;">
+            <a href="#" id="mytheater">MY THEATER</a>
+            <div class="submenu" id="mytheater-submenu">
+                <a href="cgv.html">CGV</a>
+                <a href="megabox.html">MEGA BOX</a>
+                <a href="lottecinema.html">LOTTE CINEMA</a>
+            </div>
+        </div>
+    </nav>
+    <div class="body-content">
+        <div id="msg">이곳에 위치 정보 출력</div>
+        <iframe id="map" width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br/>
+        <a id="bigmaplink" target="_blank">새 창에 큰 지도 보기</a>
+    </div>
+    <footer class="footer">
+        <p>Copyright 유하연 주소 서울특별시 용산구 청파로47길 100</p>
+    </footer>
+    <script src="home.js"></script>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error); // 현재 위치 정보 요청
+        } else {
+            alert("Geolocation을 지원하지 않습니다.");
+        }
+
+        function success(position) {
+            let lat = position.coords.latitude; // 위도
+            let lon = position.coords.longitude; // 경도
+            let acc = position.coords.accuracy; // 정확도
+
+            // 위도와 경도의 소수점 이하 자리가 너무 길어 유효 숫자 6자리로 짜름
+            lat = lat.toPrecision(6);
+            lon = lon.toPrecision(6);
+
+            let now = new Date();
+            let text = "현재 시간: " + now.toUTCString() + "<br>";
+            text += "현재 위치: 위도 " + lat + "°, 경도 " + lon + "°<br>";
+            text += "정확도: " + acc + "m<br>";
+            document.getElementById("msg").innerHTML = text;
+
+            let map = document.getElementById("map");
+            map.src = "https://www.openstreetmap.org/export/embed.html?bbox=" + (parseFloat(lon) - 0.01) + "%2C" + (parseFloat(lat) - 0.01) + "%2C" + (parseFloat(lon) + 0.01) + "%2C" + (parseFloat(lat) + 0.01);
+
+            // lat와 lon은 문자열이므로 숫자로 바꾸기 위해 parseFloat() 사용
+            let maplink = document.getElementById("bigmaplink");
+            let zoom = 15; // 지도의 줌 레벨. 숫자가 클수록 자세한 지도
+            maplink.href = "https://www.openstreetmap.org/#map=" + zoom + "/" + lat + "/" + lon;
+        }
+
+        function error() {
+            alert("위치 정보를 가져올 수 없습니다.");
+        }
+    </script>
+</body>
+</html>
