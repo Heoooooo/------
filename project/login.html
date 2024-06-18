@@ -96,15 +96,9 @@
                 return;
             }
 
-            let lastVisitDate = new Date(user.lastVisit);
-            let currentDate = new Date();
+            user.visitCount++;
+            setCookie(username, JSON.stringify(user), 365);
 
-            // 브라우저를 닫았다가 다시 열 때를 확인하기 위해 날짜가 바뀌었는지 확인
-            if (lastVisitDate.toDateString() !== currentDate.toDateString()) {
-                user.visitCount++;
-                user.lastVisit = currentDate;
-                setCookie(username, JSON.stringify(user), 365);
-            }
             document.cookie = "username=" + username + ";path=/";
 
             window.location.href = `project_welcome.html`;
@@ -122,8 +116,7 @@
 
             let user = {
                 password: password,
-                visitCount: 1,
-                lastVisit: new Date()
+                visitCount: 1
             };
             setCookie(username, JSON.stringify(user), 365);
 
