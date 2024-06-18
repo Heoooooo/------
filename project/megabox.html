@@ -10,23 +10,28 @@
         width: 250px; /* 필요한 만큼 너비를 조절하세요 */
         height: auto; /* 가로세로 비율을 유지합니다 */
         margin : 10px;
-        max-height: 200px;
-        }
-        .long-image {
-        width: 110px; /* 필요한 만큼 너비를 조절하세요 */
-        height: 230px;
-        margin : 10px;
-        max-height: 200px;
         }
         .ticket-container{
             display: flex;
             flex-wrap: wrap; /* 필요시 줄 바꿈 허용 */
-            justify-content: center; /* 가운데 정렬 */
+            justify-content: left; /* 가운데 정렬 */
+            margin-top: 100px;
         }
-        .clear-both {
-            clear: both;
+        .long-image {
+            width: 110px; /* 필요한 만큼 너비를 조절하세요 */
+            height: 230px;
+            margin : 10px;
+            max-height: 200px;
         }
-        
+        .megabox-link {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +69,7 @@
         </div>
     </nav>
     <div class="body-content">
-        <h1 class="clear-both">TICKET</h1>
+        <h1>TICKET</h1>
         <div class="ticket-container">
             <div class="ticket-item">
                 <img class="small-image" src="img/mega1.png" alt="ticket 1">
@@ -82,6 +87,7 @@
                 <img class="small-image" src="img/mega5.png" alt="ticket 5">
             </div>
         </div>
+        <a href="https://megabox.co.kr/" class="megabox-link">MEGABOX 바로가기</a>
     </div>
     <footer class="footer">
         <p>Copyright 유하연 주소 서울특별시 용산구 청파로47길 100</p>
