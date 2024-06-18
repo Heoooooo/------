@@ -6,6 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="home.css">
     <style>
+        .body-content{
+            flex-direction: column;
+        }
         .body-content a{
             color: #ffffff;
         }
@@ -13,7 +16,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>현재 위치에서 영화관 찾기</h1>
+        <h1>내 근처 영화관</h1>
     </header>
     <nav class="nav-menu">
         <div class="menu-item" style="position: relative;">
@@ -46,6 +49,7 @@
         </div>
     </nav>
     <div class="body-content">
+        <h2>현재 위치에서 영화관 찾기</h2>
         <div id="msg">이곳에 위치 정보 출력</div>
         <iframe id="map" width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br/>
         <a id="bigmaplink" target="_blank">새 창에 큰 지도 보기</a>

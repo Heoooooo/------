@@ -33,21 +33,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Get username from localStorage
-        let username = localStorage.getItem('username');
+        function getCookie(name) {
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let cookies = decodedCookie.split(';');
+            name = name + "=";
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.indexOf(name) == 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return "";
+        }
+
+        // Get username from cookie
+        let username = getCookie('username');
 
         // Display username on the page
         document.getElementById('username').textContent = username;
 
-        // Retrieve user data from localStorage
-        let users = JSON.parse(localStorage.getItem('users')) || {};
+        // Retrieve user data from cookie
+        let userCookie = getCookie(username);
+        let user = userCookie ? JSON.parse(userCookie) : null;
 
         // Display visitCount on the page
-        if (users[username]) {
-            document.getElementById('visitCount').textContent = users[username].visitCount;
+        if (user) {
+            document.getElementById('visitCount').textContent = user.visitCount;
 
             // Optional: Show alert with visit count
-            alert(`오늘 ${username}님의 ${users[username].visitCount}번째 방문입니다.`);
+            alert(`오늘 ${username}님의 ${user.visitCount}번째 방문입니다.`);
         } else {
             document.getElementById('visitCount').textContent = '0';
         }
