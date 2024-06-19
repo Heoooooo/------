@@ -5,24 +5,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* 사이드바 스타일 */
 
 .body-content {
     flex: 1;
     display: flex;
     flex-direction: row;
     padding: 1rem;
-    background-color: #ffffff; /* 메인 콘텐츠 영역 배경 진한 회색으로 설정 */
-    color: #ffffff; /* 텍스트 색상 흰색으로 설정 */
+    background-color: #ffffff;
+    color: #ffffff;
 }
 
 .sidebar {
     width: 200px;
-    background-color: #343a40; /* 사이드바 배경 진한 회색으로 설정 */
+    background-color: #343a40;
     padding: 1rem;
-    color: #ffffff; /* 텍스트 색상 흰색으로 설정 */
-    flex-shrink: 0; /* 사이드바가 너무 작아지지 않도록 설정 */
-    display: flex; /* flex container로 설정 */
+    color: #ffffff;
+    flex-shrink: 0;
+    display: flex;
     flex-direction: column; /* 세로로 정렬 */
     margin-right: 2rem; /* 사이드바와 콘텐츠 사이의 마진 */
 }
@@ -55,4 +54,3 @@
     max-height: 400px;
     object-fit: contain; /* 이미지가 컨테이너에 맞춰지도록 설정 */
 }
-/* 전반적인 스타일 */

@@ -24,7 +24,7 @@ function toggleSubmenu(submenuId) {
     });
 }
 
-// Hide the submenus when clicking outside of them
+
 window.addEventListener('click', function(event) {
     if (!event.target.closest('.menu-item')) {
         var submenus = document.querySelectorAll('.submenu');
